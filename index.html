@@ -98,6 +98,22 @@
             padding-top: 80px;
             background: var(--color-surface);
             border-bottom: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            width: 900px;
+            height: 900px;
+            background: url('favicon-2048x2048.png') center/contain no-repeat;
+            filter: blur(4px);
+            opacity: 0.08;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -149,6 +165,31 @@
 
         .cta-button:hover {
             opacity: 0.75;
+        }
+
+        .cta-admin {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1.5rem;
+            padding: 0.875rem 2rem;
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            border: 1px solid var(--color-border);
+            transition: border-color 0.2s, opacity 0.2s;
+        }
+
+        .cta-admin:hover {
+            border-color: var(--color-text);
+        }
+
+        .cta-admin img {
+            width: 1.1em;
+            height: 1.1em;
+            object-fit: contain;
         }
 
         /* Sections */
@@ -314,8 +355,15 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-content {
@@ -355,6 +403,17 @@
                 gap: 0.5rem;
                 text-align: center;
             }
+
+            .cta-admin {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .hero::before {
+                right: -10%;
+                width: 300px;
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -377,8 +436,13 @@
                 <div class="hero-content">
                     <p class="hero-eyebrow">AI Research &amp; Development</p>
                     <h1>Amplifying <strong>Impact</strong><br>Through Intelligence</h1>
-                    <p>We build AI tools and conduct research to help charitable organizations maximize their positive impact on the world.</p>
+                    <p>We build AI tools and conduct research to help charitable organizations maximize their positive
+                        impact on the world.</p>
                     <a href="#contact" class="cta-button">Get in Touch</a>
+                    <a href="/admin" class="cta-admin">
+                        <img src="favicon-2048x2048.png" alt="">
+                        Log into the Admin app
+                    </a>
                 </div>
             </div>
         </section>
@@ -387,23 +451,27 @@
             <div class="container">
                 <p class="section-label">Our Focus Areas</p>
                 <h2 class="section-title">Leveraging AI for effective philanthropy</h2>
-                <p class="section-subtitle">Applying artificial intelligence to solve the most pressing challenges in charitable giving and impact measurement.</p>
+                <p class="section-subtitle">Applying artificial intelligence to solve the most pressing challenges in
+                    charitable giving and impact measurement.</p>
 
                 <div class="features">
                     <div class="feature-card">
                         <p class="feature-number">01</p>
                         <h3>Impact Analysis</h3>
-                        <p>Advanced analytics to measure and predict the real-world outcomes of charitable interventions.</p>
+                        <p>Advanced analytics to measure and predict the real-world outcomes of charitable
+                            interventions.</p>
                     </div>
                     <div class="feature-card">
                         <p class="feature-number">02</p>
                         <h3>Opportunity Discovery</h3>
-                        <p>AI-powered identification of high-impact giving opportunities that might otherwise be overlooked.</p>
+                        <p>AI-powered identification of high-impact giving opportunities that might otherwise be
+                            overlooked.</p>
                     </div>
                     <div class="feature-card">
                         <p class="feature-number">03</p>
                         <h3>Resource Optimization</h3>
-                        <p>Tools to help nonprofits and religious organizations intelligently plan and efficiently allocate resources where they can do the most good.</p>
+                        <p>Tools to help nonprofits and religious organizations intelligently plan and efficiently
+                            allocate resources where they can do the most good.</p>
                     </div>
                 </div>
             </div>
@@ -415,9 +483,13 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2 class="section-title">effectivecharity.ai labs</h2>
-                        <p>A research initiative dedicated to applying cutting-edge artificial intelligence to the challenge of doing good better.</p>
-                        <p>We believe that thoughtful application of AI can help charitable organizations and individual donors make more informed decisions, ultimately leading to greater positive impact in the world.</p>
-                        <p>Our work spans research, tool development, and collaboration with leading organizations in the effective charity and philanthropy spaces.</p>
+                        <p>A research initiative dedicated to applying cutting-edge artificial intelligence to the
+                            challenge of doing good better.</p>
+                        <p>We believe that thoughtful application of AI can help charitable organizations and individual
+                            donors make more informed decisions, ultimately leading to greater positive impact in the
+                            world.</p>
+                        <p>Our work spans research, tool development, and collaboration with leading organizations in
+                            the effective charity and philanthropy spaces.</p>
                     </div>
                     <div class="stats">
                         <div class="stat">
@@ -425,7 +497,7 @@
                             <div class="stat-label">Powered Research</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">EA</div>
+                            <div class="stat-number">Effective Charity</div>
                             <div class="stat-label">Aligned Mission</div>
                         </div>
                         <div class="stat">
